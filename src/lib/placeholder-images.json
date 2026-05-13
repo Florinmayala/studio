@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "birthday-person",
-      "description": "Portrait de Blessing célébrant son anniversaire",
-      "imageUrl": "https://picsum.photos/seed/portrait-woman-happy/400/600",
-      "imageHint": "portrait woman"
+      "description": "Portrait de Blessing avec son gâteau d'anniversaire",
+      "imageUrl": "https://storage.googleapis.com/fetch-api-74697.appspot.com/fetch_api_files/90a6e387-9516-4355-83e9-a3597c48972e",
+      "imageHint": "birthday blessing"
     }
   ]
 }
