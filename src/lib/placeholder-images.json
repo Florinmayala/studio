@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "birthday-person",
-      "description": "Blessing célébrant son anniversaire",
-      "imageUrl": "https://picsum.photos/seed/blessing-celebration/400/600",
-      "imageHint": "blessing celebration birthday"
+      "description": "Portrait de Blessing célébrant son anniversaire",
+      "imageUrl": "https://picsum.photos/seed/portrait-woman-happy/400/600",
+      "imageHint": "portrait woman"
     }
   ]
 }
