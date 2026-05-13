@@ -3,8 +3,8 @@
     {
       "id": "birthday-person",
       "description": "Portrait de Blessing",
-      "imageUrl": "",
-      "imageHint": "birthday blessing"
+      "imageUrl": "https://picsum.photos/seed/birthday/600/800",
+      "imageHint": "portrait joyeux"
     }
   ]
 }
