@@ -3,7 +3,7 @@
 Ce projet est votre carte d'anniversaire personnalisée pour Blessing. Voici comment la mettre en ligne étape par étape.
 
 ## 1. Télécharger le code sur votre ordinateur
-1. Cherchez l'icône **"Download"** (une flèche vers le bas) tout en haut à droite de cette fenêtre.
+1. Cherchez l'icône **"Download"** (une flèche vers le bas dans un plateau) tout en haut à droite de cette fenêtre, dans la barre noire.
 2. Cela va créer un fichier `.zip`. Enregistrez-le sur votre ordinateur.
 3. Faites un clic droit sur le fichier `.zip` et choisissez **"Extraire tout"**. Vous avez maintenant un dossier avec tout le code.
 
@@ -11,7 +11,7 @@ Ce projet est votre carte d'anniversaire personnalisée pour Blessing. Voici com
 1. Ouvrez le dossier que vous venez d'extraire.
 2. Cherchez le dossier nommé `public`.
 3. Prenez votre photo `IMG_1292.JPG` et placez-la **à l'intérieur** de ce dossier `public`.
-4. Vérifiez que le nom est bien `IMG_1292.JPG` (en majuscules).
+4. Vérifiez que le nom est bien `IMG_1292.JPG` (tout en majuscules).
 
 ## 3. Mettre votre code sur GitHub
 1. **Installer GitHub Desktop** : Téléchargez-le sur [desktop.github.com](https://desktop.github.com/).
