@@ -1,36 +1,41 @@
-# Festiva AI - Célébrations d'Anniversaire Intelligentes
+# Festiva AI - Guide de Déploiement Simplifié
 
-Ce projet est une application de carte d'anniversaire interactive propulsée par Next.js et Genkit.
+Ce projet est votre carte d'anniversaire personnalisée. Voici comment la mettre en ligne étape par étape.
 
-## 🚀 Comment Déployer
+## 1. Mettre votre code sur GitHub (La méthode facile)
 
-Pour mettre votre site en ligne, nous utilisons **Firebase App Hosting**.
+1. **Télécharger le code** : Téléchargez les fichiers de ce projet sur votre ordinateur.
+2. **Installer GitHub Desktop** : Téléchargez-le sur [desktop.github.com](https://desktop.github.com/) et installez-le.
+3. **Créer le dépôt** :
+   - Ouvrez GitHub Desktop.
+   - Allez dans `File` > `Add Local Repository`.
+   - Sélectionnez le dossier où vous avez mis le code.
+   - Cliquez sur `Publish Repository` pour l'envoyer sur votre compte GitHub.
 
-### Étapes de déploiement :
+## 2. Déployer sur Internet avec Firebase
 
-1. **Hébergement du code** : 
-   Poussez l'intégralité de ce projet sur un dépôt **GitHub**.
+Une fois que votre code est sur GitHub :
 
-2. **Configuration Firebase** :
-   - Allez sur la [Console Firebase](https://console.firebase.google.com/).
-   - Sélectionnez votre projet.
-   - Dans le menu de gauche, allez dans **Build > App Hosting**.
-   - Cliquez sur **Get Started** (Commencer).
+1. Allez sur la [Console Firebase](https://console.firebase.google.com/).
+2. Cliquez sur votre projet.
+3. Dans le menu de gauche, allez dans **Build > App Hosting**.
+4. Cliquez sur **Commencer** (Get Started).
+5. Connectez votre compte GitHub et sélectionnez le dépôt que vous venez de créer.
+6. Gardez les paramètres par défaut et cliquez sur **Finish**.
 
-3. **Connexion GitHub** :
-   - Connectez votre compte GitHub à Firebase.
-   - Sélectionnez le dépôt que vous venez de créer.
-   - Suivez les instructions pour créer le "Backend".
+## 3. Configurer l'IA (Important)
 
-4. **Variables d'environnement (Important)** :
-   - Une fois le backend créé, allez dans ses paramètres dans la console Firebase.
-   - Ajoutez la clé secrète `GOOGLE_GENAI_API_KEY` pour que l'IA fonctionne en production.
+Pour que la génération de messages fonctionne en ligne :
+1. Dans la console **App Hosting**, allez dans les paramètres de votre application.
+2. Allez dans l'onglet **Environment Variables** (Variables d'environnement).
+3. Ajoutez une nouvelle variable :
+   - Clé : `GOOGLE_GENAI_API_KEY`
+   - Valeur : (Collez votre clé API Google Gemini ici)
 
-5. **Déploiement automatique** :
-   À chaque fois que vous ferez un `git push` sur votre branche principale, Firebase redéploiera automatiquement votre site.
+## 4. Gérer l'image de Blessing
 
-## 📸 Personnalisation de l'image
+- Votre photo doit s'appeler exactement `IMG_1292.JPG`.
+- Elle doit être placée dans le dossier `public` à la racine du projet.
+- Si vous changez la photo sur votre ordinateur, n'oubliez pas de faire un "Commit" et "Push" dans GitHub Desktop pour mettre à jour le site en ligne.
 
-Pour changer la photo de Blessing :
-1. Placez votre fichier image (ex: `IMG_1292.JPG`) dans le dossier `/public`.
-2. Vérifiez que le nom du fichier dans `src/lib/placeholder-images.json` correspond exactement au nom de votre fichier.
+BISOUS FLORIN
