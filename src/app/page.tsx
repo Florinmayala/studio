@@ -4,10 +4,19 @@
 import React, { useState } from 'react';
 import { BirthdayForm } from '@/components/birthday-form';
 import { FestivaCard } from '@/components/festiva-card';
-import { Sparkles, Zap } from 'lucide-react';
+import { Sparkles, Wand2 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 export default function Home() {
   const [personalizedMessage, setPersonalizedMessage] = useState<string>('');
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center py-12 px-4 md:px-8 bg-background relative overflow-hidden">
@@ -20,39 +29,50 @@ export default function Home() {
         <div className="absolute bottom-[20%] right-[10%] animate-float text-4xl delay-500">✨</div>
       </div>
 
-      <div className="container max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+      <div className="flex flex-col items-center space-y-12 relative z-10 w-full max-w-4xl">
         
-        {/* Côté gauche : Marque & Générateur */}
-        <div className="flex flex-col space-y-8 text-left">
-          <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="bg-primary p-2 rounded-xl">
-                <Sparkles className="w-8 h-8 text-white" />
-              </div>
-              <span className="text-3xl font-bold tracking-tighter text-white">Festiva AI</span>
+        {/* En-tête minimaliste */}
+        <div className="flex flex-col items-center space-y-4 text-center">
+          <div className="flex items-center gap-3">
+            <div className="bg-primary p-2 rounded-xl">
+              <Sparkles className="w-6 h-6 text-white" />
             </div>
-            <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tight leading-[1.1]">
-              Sublimez chaque <span className="text-primary italic">Célébration</span>.
-            </h2>
-            <p className="text-xl text-muted-foreground font-light max-w-lg leading-relaxed">
-              Créez des vœux d'anniversaire profondément personnels et émouvants grâce à l'IA, présentés dans une expérience luxueuse et interactive.
-            </p>
-          </div>
-
-          <div className="glass-panel p-8 rounded-[2rem] border-white/5">
-            <div className="space-y-6">
-              <div className="flex items-center gap-2 text-primary font-bold text-lg mb-2">
-                <Zap className="w-5 h-5" />
-                <span>Synthétiseur de Vœux</span>
-              </div>
-              <BirthdayForm onMessageGenerated={(msg) => setPersonalizedMessage(msg)} />
-            </div>
+            <span className="text-2xl font-bold tracking-tighter text-white">Festiva AI</span>
           </div>
         </div>
 
-        {/* Côté droit : La carte interactive */}
-        <div className="flex justify-center items-center">
+        {/* La carte interactive (Ancienne partie droite, maintenant centrée) */}
+        <div className="w-full flex justify-center items-center">
           <FestivaCard personalizedMessage={personalizedMessage} />
+        </div>
+
+        {/* Action pour générer ou modifier le message */}
+        <div className="flex flex-col items-center space-y-4">
+          <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+            <DialogTrigger asChild>
+              <Button size="lg" className="rounded-full px-8 py-6 text-lg font-bold bg-white/10 hover:bg-white/20 border border-white/10 backdrop-blur-sm group">
+                <Wand2 className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
+                Personnaliser le Vœu
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="glass-panel border-white/10 sm:max-w-[425px]">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold text-white flex items-center gap-2">
+                  <Wand2 className="text-primary" />
+                  Créer un Vœu Magique
+                </DialogTitle>
+              </DialogHeader>
+              <div className="mt-4">
+                <BirthdayForm onMessageGenerated={(msg) => {
+                  setPersonalizedMessage(msg);
+                  setIsDialogOpen(false);
+                }} />
+              </div>
+            </DialogContent>
+          </Dialog>
+          <p className="text-muted-foreground/60 text-sm italic">
+            Cliquez pour générer un message unique avec l'IA
+          </p>
         </div>
       </div>
 
