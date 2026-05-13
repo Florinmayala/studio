@@ -4,7 +4,7 @@
 import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Gift, Crown, Share2, Volume2, VolumeX } from 'lucide-react';
+import { Gift, Crown, Share2, Volume2, VolumeX, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import ConfettiCanvas, { ConfettiRef } from './confetti-canvas';
@@ -17,7 +17,9 @@ interface FestivaCardProps {
 export function FestivaCard({ personalizedMessage }: FestivaCardProps) {
   const [isRevealed, setIsRevealed] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
+  const [imageError, setImageError] = useState(false);
   const confettiRef = useRef<ConfettiRef>(null);
+  
   const profileImg = PlaceHolderImages.find(img => img.id === 'birthday-person');
 
   const handleReveal = () => {
@@ -43,14 +45,22 @@ export function FestivaCard({ personalizedMessage }: FestivaCardProps) {
               <Crown className="w-12 h-12 text-yellow-400 fill-yellow-400 filter drop-shadow-md animate-bounce" />
             </div>
             <div className="relative w-48 h-64 rounded-3xl p-1 bg-gradient-to-tr from-primary via-accent to-yellow-400 animate-pulse-glow">
-              <div className="w-full h-full rounded-[1.4rem] overflow-hidden border-4 border-background relative">
-                <Image
-                  src={profileImg?.imageUrl || ''}
-                  alt="Blessing"
-                  fill
-                  className="object-cover"
-                  data-ai-hint="blessing celebration birthday"
-                />
+              <div className="w-full h-full rounded-[1.4rem] overflow-hidden border-4 border-background relative bg-muted flex items-center justify-center">
+                {profileImg?.imageUrl && !imageError ? (
+                  <Image
+                    src={profileImg.imageUrl}
+                    alt="Blessing"
+                    fill
+                    className="object-cover"
+                    onError={() => setImageError(true)}
+                    priority
+                  />
+                ) : (
+                  <div className="flex flex-col items-center justify-center text-muted-foreground p-4">
+                    <User className="w-16 h-16 mb-2 opacity-20" />
+                    <span className="text-xs">Image non trouvée</span>
+                  </div>
+                )}
               </div>
             </div>
           </div>
