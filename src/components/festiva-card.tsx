@@ -46,7 +46,7 @@ export function FestivaCard({ personalizedMessage }: FestivaCardProps) {
               <div className="w-full h-full rounded-full overflow-hidden border-4 border-background relative">
                 <Image
                   src={profileImg?.imageUrl || ''}
-                  alt="Birthday Person"
+                  alt="Personne fêtée"
                   fill
                   className="object-cover"
                   data-ai-hint="happy person celebration"
@@ -58,13 +58,13 @@ export function FestivaCard({ personalizedMessage }: FestivaCardProps) {
           {/* Titles */}
           <div className="space-y-2">
             <Badge variant="outline" className="border-primary text-primary px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4">
-              Royal Celebration
+              Célébration Royale
             </Badge>
             <h1 className="text-5xl md:text-7xl dancing-headline text-white leading-tight">
-              Happy Birthday!
+              Joyeux Anniversaire !
             </h1>
             <p className="text-muted-foreground font-light text-lg">
-              To the most amazing person today.
+              À la personne la plus incroyable aujourd'hui.
             </p>
           </div>
 
@@ -77,7 +77,7 @@ export function FestivaCard({ personalizedMessage }: FestivaCardProps) {
                 className="bg-primary hover:bg-primary/90 text-white px-10 py-8 rounded-2xl text-xl font-bold transition-all hover:scale-105 active:scale-95 shadow-xl group"
               >
                 <Gift className="mr-3 h-6 w-6 group-hover:rotate-12 transition-transform" />
-                Reveal Special Surprise
+                Révéler la Surprise
               </Button>
             ) : (
               <div className="animate-in fade-in zoom-in duration-700 w-full">
@@ -86,7 +86,7 @@ export function FestivaCard({ personalizedMessage }: FestivaCardProps) {
                     <Gift className="w-20 h-20 text-accent" />
                   </div>
                   <p className="text-xl md:text-2xl font-medium text-white italic leading-relaxed font-headline">
-                    {personalizedMessage || "Wishing you a day as brilliant as your smile and as beautiful as your heart. May every moment be filled with the joy you bring into the world!"}
+                    {personalizedMessage || "Je te souhaite une journée aussi brillante que ton sourire et aussi belle que ton cœur. Que chaque instant soit rempli de la joie que tu apportes au monde !"}
                   </p>
                 </div>
               </div>
@@ -98,13 +98,13 @@ export function FestivaCard({ personalizedMessage }: FestivaCardProps) {
             <button 
               onClick={() => setIsMuted(!isMuted)}
               className="p-3 rounded-full bg-white/5 hover:bg-white/10 transition-colors text-muted-foreground hover:text-white"
-              title="Toggle Sound"
+              title="Activer/Désactiver le son"
             >
               {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
             </button>
             <button 
               className="p-3 rounded-full bg-white/5 hover:bg-white/10 transition-colors text-muted-foreground hover:text-white"
-              title="Share Card"
+              title="Partager la carte"
             >
               <Share2 className="w-5 h-5" />
             </button>

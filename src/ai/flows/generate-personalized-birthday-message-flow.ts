@@ -1,10 +1,11 @@
+
 'use server';
 /**
- * @fileOverview A Genkit flow for generating personalized birthday messages.
+ * @fileOverview Un flux Genkit pour générer des vœux d'anniversaire personnalisés.
  *
- * - generatePersonalizedBirthdayMessage - A function that generates a personalized birthday message.
- * - GeneratePersonalizedBirthdayMessageInput - The input type for the generatePersonalizedBirthdayMessage function.
- * - GeneratePersonalizedBirthdayMessageOutput - The return type for the generatePersonalizedBirthdayMessage function.
+ * - generatePersonalizedBirthdayMessage - Une fonction qui génère un message d'anniversaire personnalisé.
+ * - GeneratePersonalizedBirthdayMessageInput - Le type d'entrée pour la fonction.
+ * - GeneratePersonalizedBirthdayMessageOutput - Le type de sortie pour la fonction.
  */
 
 import { ai } from '@/ai/genkit';
@@ -14,18 +15,18 @@ const GeneratePersonalizedBirthdayMessageInputSchema = z.object({
   relationshipType: z
     .string()
     .describe(
-      'The type of relationship with the birthday person (e.g., "close friend", "family member", "partner", "colleague").'
+      'Le type de relation avec la personne dont c\'est l\'anniversaire (ex: "ami proche", "famille", "partenaire", "collègue").'
     ),
   sharedMemories: z
     .string()
     .describe(
-      'Key shared memories or inside jokes to incorporate into the message, separated by semicolons. e.g., "that one trip to Hawaii; the time we pranked John; their love for cats"'
+      'Souvenirs partagés ou blagues privées à incorporer dans le message.'
     ),
   messageTone: z
     .string()
     .optional()
     .describe(
-      'The desired tone for the message (e.g., "heartfelt", "humorous", "inspirational"). Defaults to "heartfelt".'
+      'Le ton souhaité pour le message (ex: "sincère", "humoristique", "inspirant", "poétique").'
     ),
 });
 export type GeneratePersonalizedBirthdayMessageInput = z.infer<
@@ -35,7 +36,7 @@ export type GeneratePersonalizedBirthdayMessageInput = z.infer<
 const GeneratePersonalizedBirthdayMessageOutputSchema = z.object({
   birthdayMessage: z
     .string()
-    .describe('A personalized, emotionally resonant birthday message.'),
+    .describe('Un message d\'anniversaire personnalisé en français, émouvant et unique.'),
 });
 export type GeneratePersonalizedBirthdayMessageOutput = z.infer<
   typeof GeneratePersonalizedBirthdayMessageOutputSchema
@@ -51,18 +52,19 @@ const generatePersonalizedBirthdayMessagePrompt = ai.definePrompt({
   name: 'generatePersonalizedBirthdayMessagePrompt',
   input: { schema: GeneratePersonalizedBirthdayMessageInputSchema },
   output: { schema: GeneratePersonalizedBirthdayMessageOutputSchema },
-  prompt: `You are an expert birthday message generator, capable of crafting personalized, emotional, and unique birthday wishes.
-Your goal is to create a heartfelt and memorable message for an interactive birthday card.
+  prompt: `Tu es un expert en rédaction de vœux d'anniversaire, capable de créer des messages personnalisés, émouvants et uniques.
+Ton but est de créer un message chaleureux et mémorable pour une carte d'anniversaire interactive.
 
-Consider the following details:
-Relationship Type: {{{relationshipType}}}
-Shared Memories: {{{sharedMemories}}}
+**IMPORTANT : Ton message doit être rédigé exclusivement en français.**
 
-Desired Tone: {{{messageTone}}} (If not specified, aim for a heartfelt and warm tone.)
+Détails à prendre en compte :
+Type de relation : {{{relationshipType}}}
+Souvenirs communs : {{{sharedMemories}}}
+Ton souhaité : {{{messageTone}}} (Si non spécifié, utilise un ton sincère et chaleureux.)
 
-Craft a birthday message that is sincere, reflects the bond you share, and incorporates the shared memories in a subtle yet meaningful way. The message should be appropriate for the specified relationship type and tone. Make it special and unique.
+Rédige un vœu d'anniversaire sincère qui reflète le lien spécial que vous partagez, en intégrant les souvenirs mentionnés de manière naturelle et touchante. Le message doit être adapté à la relation et au ton demandés. Fais en sorte qu'il soit exceptionnel.
 
-Birthday Message:`,
+Message d'anniversaire :`,
 });
 
 const generatePersonalizedBirthdayMessageFlow = ai.defineFlow(

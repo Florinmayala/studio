@@ -3,8 +3,8 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Festiva AI - Intelligent Birthday Celebrations',
-  description: 'Generate personalized, emotional birthday experiences with AI.',
+  title: 'Festiva AI - Célébrations d\'Anniversaire Intelligentes',
+  description: 'Générez des expériences d\'anniversaire personnalisées et émouvantes avec l\'IA.',
 };
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

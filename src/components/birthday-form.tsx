@@ -14,8 +14,8 @@ import { Sparkles, Loader2 } from 'lucide-react';
 import { generatePersonalizedBirthdayMessage } from '@/ai/flows/generate-personalized-birthday-message-flow';
 
 const formSchema = z.object({
-  relationshipType: z.string().min(1, "Required"),
-  sharedMemories: z.string().min(5, "Tell us a bit more!"),
+  relationshipType: z.string().min(1, "Ce champ est requis"),
+  sharedMemories: z.string().min(5, "Dites-en nous un peu plus !"),
   messageTone: z.string().optional(),
 });
 
@@ -31,7 +31,7 @@ export function BirthdayForm({ onMessageGenerated }: BirthdayFormProps) {
     defaultValues: {
       relationshipType: '',
       sharedMemories: '',
-      messageTone: 'heartfelt',
+      messageTone: 'sincère',
     },
   });
 
@@ -59,19 +59,19 @@ export function BirthdayForm({ onMessageGenerated }: BirthdayFormProps) {
           name="relationshipType"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Relationship</FormLabel>
+              <FormLabel>Relation</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger className="bg-white/5 border-white/10">
-                    <SelectValue placeholder="Who are they to you?" />
+                    <SelectValue placeholder="Qui sont-ils pour vous ?" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="close friend">Close Friend</SelectItem>
-                  <SelectItem value="partner">Partner</SelectItem>
-                  <SelectItem value="family member">Family Member</SelectItem>
-                  <SelectItem value="colleague">Colleague</SelectItem>
-                  <SelectItem value="bestie">Best Friend Forever</SelectItem>
+                  <SelectItem value="ami proche">Ami(e) proche</SelectItem>
+                  <SelectItem value="partenaire">Partenaire</SelectItem>
+                  <SelectItem value="membre de la famille">Membre de la famille</SelectItem>
+                  <SelectItem value="collègue">Collègue</SelectItem>
+                  <SelectItem value="meilleur ami">Meilleur(e) ami(e)</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage />
@@ -84,10 +84,10 @@ export function BirthdayForm({ onMessageGenerated }: BirthdayFormProps) {
           name="sharedMemories"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Shared Memories or Jokes</FormLabel>
+              <FormLabel>Souvenirs ou anecdotes</FormLabel>
               <FormControl>
                 <Textarea 
-                  placeholder="e.g. that trip to Italy; the coffee spill; our cat obsession..." 
+                  placeholder="ex: ce voyage à Paris ; la chute de café ; notre passion pour les chats..." 
                   className="bg-white/5 border-white/10 resize-none h-24"
                   {...field} 
                 />
@@ -102,18 +102,18 @@ export function BirthdayForm({ onMessageGenerated }: BirthdayFormProps) {
           name="messageTone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Tone</FormLabel>
+              <FormLabel>Ton du message</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger className="bg-white/5 border-white/10">
-                    <SelectValue placeholder="Select tone" />
+                    <SelectValue placeholder="Sélectionnez un ton" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="heartfelt">Heartfelt</SelectItem>
-                  <SelectItem value="humorous">Humorous</SelectItem>
-                  <SelectItem value="inspirational">Inspirational</SelectItem>
-                  <SelectItem value="poetic">Poetic</SelectItem>
+                  <SelectItem value="sincère">Sincère</SelectItem>
+                  <SelectItem value="humoristique">Humoristique</SelectItem>
+                  <SelectItem value="inspirant">Inspirant</SelectItem>
+                  <SelectItem value="poétique">Poétique</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage />
@@ -131,7 +131,7 @@ export function BirthdayForm({ onMessageGenerated }: BirthdayFormProps) {
           ) : (
             <Sparkles className="mr-2 h-4 w-4 group-hover:animate-pulse" />
           )}
-          {loading ? 'Synthesizing...' : 'Generate Magic Wish'}
+          {loading ? 'Synthèse en cours...' : 'Générer le Vœu Magique'}
         </Button>
       </form>
     </Form>
