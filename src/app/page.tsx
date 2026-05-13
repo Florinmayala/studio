@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BirthdayForm } from '@/components/birthday-form';
 import { FestivaCard } from '@/components/festiva-card';
 import { Sparkles, Wand2 } from 'lucide-react';
@@ -17,6 +17,11 @@ import {
 export default function Home() {
   const [personalizedMessage, setPersonalizedMessage] = useState<string>('');
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [year, setYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center py-12 px-4 md:px-8 bg-background relative overflow-hidden">
@@ -41,7 +46,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* La carte interactive (Ancienne partie droite, maintenant centrée) */}
+        {/* La carte interactive */}
         <div className="w-full flex justify-center items-center">
           <FestivaCard personalizedMessage={personalizedMessage} />
         </div>
@@ -78,7 +83,7 @@ export default function Home() {
 
       {/* Pied de page */}
       <footer className="mt-20 text-muted-foreground/40 text-sm font-medium tracking-widest uppercase">
-        Festiva AI &copy; {new Date().getFullYear()} — Créateur de Moments
+        Festiva AI &copy; {year || '2025'} — Créateur de Moments
       </footer>
     </main>
   );
