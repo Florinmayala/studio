@@ -2,10 +2,11 @@
 
 Ce projet est votre carte d'anniversaire personnalisée pour Blessing. Voici comment la mettre en ligne étape par étape.
 
-## 1. Télécharger le code sur votre ordinateur
-1. Cherchez l'icône **"Download"** (une flèche vers le bas dans un plateau) tout en haut à droite de cette fenêtre, dans la barre noire.
-2. Cela va créer un fichier `.zip`. Enregistrez-le sur votre ordinateur.
-3. Faites un clic droit sur le fichier `.zip` et choisissez **"Extraire tout"**. Vous avez maintenant un dossier avec tout le code.
+## 1. Télécharger le code (Depuis l'éditeur)
+1. Ne cherchez pas sur la carte elle-même. Regardez la **barre noire tout en haut de cette fenêtre** (l'interface Firebase Studio).
+2. Dans le coin **en haut à droite**, cherchez l'icône **"Download"** (une flèche vers le bas dans un petit plateau).
+3. Cliquez dessus pour obtenir un fichier `.zip`. Enregistrez-le sur votre ordinateur.
+4. Faites un clic droit sur le fichier `.zip` et choisissez **"Extraire tout"**.
 
 ## 2. Préparer l'image de Blessing (Très important)
 1. Ouvrez le dossier que vous venez d'extraire.
@@ -18,7 +19,7 @@ Ce projet est votre carte d'anniversaire personnalisée pour Blessing. Voici com
 2. **Publier** :
    - Ouvrez GitHub Desktop.
    - Allez dans `File` > `Add Local Repository`.
-   - Sélectionnez votre dossier de projet.
+   - Sélectionnez votre dossier de projet dézippé.
    - Cliquez sur le bouton bleu **"Publish Repository"**.
 
 ## 4. Déployer avec Firebase App Hosting
