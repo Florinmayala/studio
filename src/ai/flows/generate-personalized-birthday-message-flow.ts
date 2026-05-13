@@ -1,4 +1,3 @@
-
 'use server';
 /**
  * @fileOverview Un flux Genkit pour générer des vœux d'anniversaire personnalisés.
@@ -56,6 +55,7 @@ const generatePersonalizedBirthdayMessagePrompt = ai.definePrompt({
 Ton but est de créer un message chaleureux et mémorable pour une carte d'anniversaire interactive.
 
 **IMPORTANT : Ton message doit être rédigé exclusivement en français.**
+**IMPORTANT : Termine toujours impérativement ton message par la mention : BISOUS FLORIN**
 
 Détails à prendre en compte :
 Type de relation : {{{relationshipType}}}

@@ -57,7 +57,7 @@ export function FestivaCard({ personalizedMessage }: FestivaCardProps) {
                 ) : (
                   <div className="flex flex-col items-center justify-center text-muted-foreground p-4">
                     <User className="w-16 h-16 mb-2 opacity-20" />
-                    <span className="text-xs">Image non trouvée</span>
+                    <span className="text-xs text-center">Image non trouvée dans /public</span>
                     <span className="text-[10px] mt-2 opacity-50 px-4">IMG_1292.JPG</span>
                   </div>
                 )}
@@ -96,7 +96,7 @@ export function FestivaCard({ personalizedMessage }: FestivaCardProps) {
                     <Gift className="w-20 h-20 text-accent" />
                   </div>
                   <p className="text-xl md:text-2xl font-medium text-white italic leading-relaxed font-headline">
-                    {personalizedMessage || "Je te souhaite une journée aussi brillante que ton sourire et aussi belle que ton cœur, Blessing. Que chaque instant soit rempli de la joie que tu apportes au monde !"}
+                    {personalizedMessage || "Je te souhaite une journée aussi brillante que ton sourire et aussi belle que ton cœur, Blessing. Que chaque instant soit rempli de la joie que tu apportes au monde ! BISOUS FLORIN"}
                   </p>
                 </div>
               </div>
