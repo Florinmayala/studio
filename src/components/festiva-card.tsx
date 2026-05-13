@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useRef } from 'react';
@@ -59,6 +58,7 @@ export function FestivaCard({ personalizedMessage }: FestivaCardProps) {
                   <div className="flex flex-col items-center justify-center text-muted-foreground p-4">
                     <User className="w-16 h-16 mb-2 opacity-20" />
                     <span className="text-xs">Image non trouvée</span>
+                    <span className="text-[10px] mt-2 opacity-50 px-4">Placez IMG_1292.JPG dans le dossier /public</span>
                   </div>
                 )}
               </div>
