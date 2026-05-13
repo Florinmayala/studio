@@ -42,14 +42,14 @@ export function FestivaCard({ personalizedMessage }: FestivaCardProps) {
             <div className="absolute -top-10 -right-2 transform rotate-12 z-20">
               <Crown className="w-12 h-12 text-yellow-400 fill-yellow-400 filter drop-shadow-md animate-bounce" />
             </div>
-            <div className="relative w-40 h-40 rounded-full p-1 bg-gradient-to-tr from-primary via-accent to-yellow-400 animate-pulse-glow">
-              <div className="w-full h-full rounded-full overflow-hidden border-4 border-background relative">
+            <div className="relative w-48 h-64 rounded-3xl p-1 bg-gradient-to-tr from-primary via-accent to-yellow-400 animate-pulse-glow">
+              <div className="w-full h-full rounded-[1.4rem] overflow-hidden border-4 border-background relative">
                 <Image
                   src={profileImg?.imageUrl || ''}
-                  alt="Personne fêtée"
+                  alt="Blessing"
                   fill
                   className="object-cover"
-                  data-ai-hint="happy person celebration"
+                  data-ai-hint="blessing celebration birthday"
                 />
               </div>
             </div>
@@ -60,8 +60,8 @@ export function FestivaCard({ personalizedMessage }: FestivaCardProps) {
             <Badge variant="outline" className="border-primary text-primary px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4">
               Célébration Royale
             </Badge>
-            <h1 className="text-5xl md:text-7xl dancing-headline text-white leading-tight">
-              Joyeux Anniversaire !
+            <h1 className="text-4xl md:text-6xl dancing-headline text-white leading-tight">
+              Joyeux Anniversaire Blessing !
             </h1>
             <p className="text-muted-foreground font-light text-lg">
               À la personne la plus incroyable aujourd'hui.
@@ -86,7 +86,7 @@ export function FestivaCard({ personalizedMessage }: FestivaCardProps) {
                     <Gift className="w-20 h-20 text-accent" />
                   </div>
                   <p className="text-xl md:text-2xl font-medium text-white italic leading-relaxed font-headline">
-                    {personalizedMessage || "Je te souhaite une journée aussi brillante que ton sourire et aussi belle que ton cœur. Que chaque instant soit rempli de la joie que tu apportes au monde !"}
+                    {personalizedMessage || "Je te souhaite une journée aussi brillante que ton sourire et aussi belle que ton cœur, Blessing. Que chaque instant soit rempli de la joie que tu apportes au monde !"}
                   </p>
                 </div>
               </div>
